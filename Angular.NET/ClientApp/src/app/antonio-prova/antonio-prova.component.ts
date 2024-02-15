@@ -9,12 +9,13 @@ import { HttpClient }        from '@angular/common/http';
 
 export class AntonioProvaComponent {
 
-  constructor(users: Array<User> = [],
-              http: HttpClient,
+  public users: Array<User> = [];
+
+  constructor(http: HttpClient,
               @Inject('BASE_URL') baseUrl: string) {
 
     http.get<Array<User>>(baseUrl + 'usercontroller').subscribe(result => {
-      users = result;
+      this.users = result;
     }, error => console.error(error));
 
   }
