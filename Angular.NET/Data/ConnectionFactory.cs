@@ -14,9 +14,9 @@ namespace Angular.NET.Data
             _logger = logger;
         }
 
-        public static DbConnection GetConnection(ConnectionTypes type, String connectionString)
+        public static DbConnection GetConnection(ConnectionTypes type, string connectionString)
         {
-            DbConnection _connection;
+            DbConnection _connection = null;
 
             if (type == ConnectionTypes.POSTGRESQL)
             {
@@ -33,6 +33,7 @@ namespace Angular.NET.Data
 
             return _connection;
         }
+
         public static DbCommand GetCommandCom(string query, DbConnection conn)
         {
             DbCommand cmd;

@@ -1,4 +1,4 @@
-namespace Angular.NET
+namespace Angular.NET.Models
 {
     public class WeatherForecast
     {

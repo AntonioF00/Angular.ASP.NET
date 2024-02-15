@@ -1,1 +1,25 @@
 <p>Prova components</p>
+
+
+<p *ngIf="!users"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="users">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Description</th>
+      <th>Email</th>
+      <th>Phone_Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.Name }}</td>
+      <td>{{ user.Surname }}</td>
+      <td>{{ user.Description }}</td>
+      <td>{{ user.Email }}</td>
+      <td>{{ user.Phone_Number }}</td>
+    </tr>
+  </tbody>
+</table>

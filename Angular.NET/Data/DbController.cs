@@ -12,8 +12,10 @@ namespace Angular.NET.Data
         public DbController(IConfiguration configuration, ILogger logger)
         {
             _logger = logger;
-            _connection = ConnectionFactory.GetConnection(configuration.GetValue<ConnectionTypes>("Configuration:ConnectionTypes"),
-                                                          configuration.GetValue<string>("Configuration:ConnectionString"));
+            //_connection = ConnectionFactory.GetConnection(configuration.GetValue<ConnectionTypes>("Configuration:ConnectionTypes"),
+            //configuration.GetValue<string>("Configuration:ConnectionString"));
+            _connection = ConnectionFactory.GetConnection(ConnectionTypes.SQLSERVER,
+                                                          "localhost\\MSSQLSERVER01;Database=CasaDiRiposo;Trusted_Connection=True;");
         }
 
         public IEnumerable<T>? ExecuteQuery<T>(object? datas, string query)
