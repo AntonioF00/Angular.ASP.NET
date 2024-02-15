@@ -1,6 +1,5 @@
 <p>Prova components</p>
 
-
 <p *ngIf="!users"><em>Loading...</em></p>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="users">
@@ -15,11 +14,11 @@
   </thead>
   <tbody>
     <tr *ngFor="let user of users">
-      <td>{{ user.Name }}</td>
-      <td>{{ user.Surname }}</td>
-      <td>{{ user.Description }}</td>
-      <td>{{ user.Email }}</td>
-      <td>{{ user.Phone_Number }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.surname }}</td>
+      <td>{{ user.description }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.phone_number }}</td>
     </tr>
   </tbody>
 </table>

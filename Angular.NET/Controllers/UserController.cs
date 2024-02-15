@@ -20,9 +20,19 @@ namespace Angular.NET.Controllers
         }
 
         [HttpGet]
-        public User[] Get()
+        public IEnumerable<User>? Get()
         {
-            return _dbController.ExecuteQuery<User>("SELECT * FROM dbo.Users").ToArray();
+            try
+            {
+                var x = _dbController.ExecuteQuery<User>("SELECT * FROM dbo.Users");
+                _logger.LogDebug("Success get method");
+                return x;
+
+            }catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return null;
+            }
         }
     }
 }

@@ -12,10 +12,8 @@ namespace Angular.NET.Data
         public DbController(IConfiguration configuration, ILogger logger)
         {
             _logger = logger;
-            //_connection = ConnectionFactory.GetConnection(configuration.GetValue<ConnectionTypes>("Configuration:ConnectionTypes"),
-            //configuration.GetValue<string>("Configuration:ConnectionString"));
-            _connection = ConnectionFactory.GetConnection(ConnectionTypes.SQLSERVER,
-                                                          "localhost\\MSSQLSERVER01;Database=CasaDiRiposo;Trusted_Connection=True;");
+            _connection = ConnectionFactory.GetConnection(configuration.GetValue<ConnectionTypes>("Configuration:ConnectionTypes"),
+                                                          configuration.GetValue<string>("Configuration:ConnectionString"));
         }
 
         public IEnumerable<T>? ExecuteQuery<T>(object? datas, string query)
@@ -24,9 +22,9 @@ namespace Angular.NET.Data
             {
                 try
                 {
-                    var res = _connection.Query<T>(query, datas);
-                    _logger.LogInformation($"{DateTime.Now} - Execute query : {res}");
-                    return res;
+                    _logger.LogInformation($"{DateTime.Now}");
+                    var x = _connection.Query<T>(query,datas);
+                    return x;
                 }
                 catch (Exception ex)
                 {
@@ -42,9 +40,9 @@ namespace Angular.NET.Data
             {
                 try
                 {
-                    var res = _connection.Query<T>(query);
-                    _logger.LogInformation($"{DateTime.Now} - Execute query : {res}");
-                    return res;
+                    _logger.LogInformation($"{DateTime.Now}");
+                    var x = _connection.Query<T>(query);
+                    return x;
                 }
                 catch (Exception ex)
                 {
@@ -53,7 +51,6 @@ namespace Angular.NET.Data
                 }
             }
         }
-
 
         public IEnumerable<Task<T>>? ExecuteQueryAsync<T>(object? datas,string query)
         {
