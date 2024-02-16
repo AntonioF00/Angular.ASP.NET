@@ -24,15 +24,12 @@
 </table>
 
 
-
-
-<!--<mat-card class="example-card" *ngif="users">
-  <mat-card-header *ngFor="let user of users">
-    <mat-card-title>{{ user.name }}  {{user.surname}}</mat-card-title>
-    <mat-card-subtitle>{{ user.description }}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content *ngFor="let user of users">
-    <p>This is a user!!</p>
-    <p>{{ user.email }}</p>
-  </mat-card-content>
-</mat-card>-->
+<div *ngFor="let user of users">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body" >
+      <h5 class="card-title">{{ user.name }}  {{user.surname}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ user.description }}</h6>
+      <p class="card-text">.</p>
+    </div>
+  </div>
+</div>
