@@ -1,6 +1,19 @@
-<p>Prova components</p>
 
 <p *ngIf="!users"><em>Loading...</em></p>
+
+<div class="alert alert-success" role="alert" *ngIf="users">
+  <h4 class="alert-heading">Well done :)</h4>
+  <p>You have users into the database!</p>
+  <hr>
+  <p class="mb-0">Navigate into website to check user's information!'.</p>
+</div>
+
+<div class="alert alert-danger" role="alert" *ngIf="!users">
+  <h4 class="alert-heading">Ohh was wrong :(</h4>
+  <p>You no have users into the database!</p>
+  <hr>
+  <p class="mb-0">Check the user's database!</p>
+</div>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="users">
   <thead>
@@ -23,13 +36,15 @@
   </tbody>
 </table>
 
-
-<div *ngFor="let user of users">
-  <div class="card" style="width: 18rem;">
-    <div class="card-body" >
+<div *ngIf="users">
+  <div class="card" style="width: 18rem;" *ngFor="let user of users" >
+    <div class="card-body">
       <h5 class="card-title">{{ user.name }}  {{user.surname}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{ user.description }}</h6>
       <p class="card-text">.</p>
     </div>
   </div>
 </div>
+
+
+
