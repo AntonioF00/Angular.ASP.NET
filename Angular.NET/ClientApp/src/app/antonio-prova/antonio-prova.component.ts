@@ -1,12 +1,12 @@
 import { Component, Inject } from '@angular/core';
-import { HttpClient }        from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector:    'antonio-prova',
   templateUrl: './antonio-prova.component.html',
-  styleUrls:  ['./antonio-prova.component.css']
+  styleUrls:  ['./antonio-prova.component.css'],
+  
 })
-
 export class AntonioProvaComponent {
 
   public users: Array<User> = [];

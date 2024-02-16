@@ -51,23 +51,5 @@ namespace Angular.NET.Data
                 }
             }
         }
-
-        //public IEnumerable<Task<T>>? ExecuteQueryAsync<T>(object? datas,string query)
-        //{
-        //    using (var connection = _connection)
-        //    {
-        //        try
-        //        {
-        //            var res = _connection.QueryAsync<T>(query, datas);
-        //            _logger.LogInformation($"{DateTime.Now} - Execute query : {res}");
-        //            return (IEnumerable<Task<T>>?)res;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            _logger.LogError($"{DateTime.Now} - Error : {ex.Message}");
-        //            return null;
-        //        }
-        //    }
-        //}
     }
 }
