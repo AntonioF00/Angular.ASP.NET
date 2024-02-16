@@ -24,9 +24,7 @@ namespace Angular.NET.Controllers
         {
             try
             {
-                var x = _dbController.ExecuteQuery<User>("SELECT * FROM dbo.Users");
-                _logger.LogDebug("Success get method");
-                return x;
+                return _dbController.ExecuteQuery<User>("SELECT * FROM dbo.Users");
 
             }catch (Exception ex)
             {
