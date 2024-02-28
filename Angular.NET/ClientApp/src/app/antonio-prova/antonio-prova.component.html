@@ -36,15 +36,14 @@
   </tbody>
 </table>
 
-<div *ngIf="users">
-  <div class="card" style="width: 18rem;" *ngFor="let user of users" >
-    <div class="card-body">
-      <h5 class="card-title">{{ user.name }}  {{user.surname}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{ user.description }}</h6>
-      <p class="card-text">.</p>
+
+
+  <div *ngIf="users">
+    <div class="card" style="width: 18rem;" *ngFor="let user of users">
+      <div class="card-body">
+        <h5 class="card-title">{{ user.name }}  {{user.surname}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ user.description }}</h6>
+        <p class="card-text">.</p>
+      </div>
     </div>
   </div>
-</div>
-
-
-

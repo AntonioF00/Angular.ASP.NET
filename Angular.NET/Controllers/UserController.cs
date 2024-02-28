@@ -26,7 +26,8 @@ namespace Angular.NET.Controllers
             {
                 return _dbController.ExecuteQuery<User>("SELECT * FROM dbo.Users");
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
                 return null;
