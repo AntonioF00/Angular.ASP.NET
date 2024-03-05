@@ -30,7 +30,7 @@ namespace Angular.NET.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                return null;
+                throw;
             }
         }
     }
